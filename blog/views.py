@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import News
 # Create your views here.
 news = [
     {
@@ -20,7 +20,7 @@ news = [
 def home(request):
     
     date = {
-        'news':news,
+        'news':News.objects.all(),
         'title':'Bosh sahifa'
     }
     return render(request, 'blog/home.html', date)

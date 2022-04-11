@@ -6,9 +6,9 @@
     <div class="alert alert-light">
         <h1>{{post.title}}</h1>
         <p>{{post.text}}</p>
-        <span class='text-muted'>Joylangani: {{ post.date}}</span>
+        <span class='text-muted'>{{ post.date|date:"j F Y, H:i:s"}}</span>
         {% if post.avtor %}
-        <p><b>Mualif:</b> <markdown>{{post.avtor}}</markdown> sana: {{post.date }}</p>
+        <p><b>Mualif:</b> <markdown>{{post.avtor}}</markdown>{{post.date}}</p>
         {% else %}
             <p><b>Mualif:</b> <markdown>Admin</markdown></p> 
         {% endif %}
