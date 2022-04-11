@@ -2,11 +2,12 @@
     {% block content %}
     <div class="form-section"> 
         <h2>Saytdaa ruyhatdan utish</h2>
-        <form action="POST">
+        <form mehtod="post">
             {% csrf_token %}
-            {{ form }}
-
+            {{ form.as_p }}
+            <button type="submit" class='btn btn-outline-warning'>Ruyhatdan utish</button>
         </form>
+        
     </div>
     {% endblock %}
 
