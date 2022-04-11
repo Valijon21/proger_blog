@@ -1,14 +1,18 @@
 {% extends 'blog/base.html' %}
 {% block content %}
     <h1>Bosh sahifamiz</h1>
+   
     {% for post in news %}
+    <div class="alert alert-light">
         <h1>{{post.title}}</h1>
         <p>{{post.text}}</p>
+        <span class='text-muted'>Joylangani: {{ post.date}}</span>
         {% if post.avtor %}
-        <p>Mualif: {{post.avtor}} sana: {{post.date }}</p>
+        <p><b>Mualif:</b> <markdown>{{post.avtor}}</markdown> sana: {{post.date }}</p>
         {% else %}
-            <p>Mualif: Admin</p> 
+            <p><b>Mualif:</b> <markdown>Admin</markdown></p> 
         {% endif %}
+    </div>
     {% endfor %}
 {% endblock %}
 

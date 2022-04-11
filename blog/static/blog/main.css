@@ -1,4 +1,7 @@
 body {
-    background:red;
+    background:fafafa;
 
+}
+.alert-light {
+    border-color:#bfbfbf
 }
