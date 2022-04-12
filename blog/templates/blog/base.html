@@ -33,7 +33,7 @@
         </div>
         <div class="navbar-nav">
           {% if user.is_authenticated %}
-            <a href="" class='btn btn-outline-secondary mr-2'>Profil</a>  
+            <a href="{% url 'profile' %}" class='btn btn-outline-secondary mr-2'>Profil</a>  
             <a href="{% url 'exit' %}" class="btn btn-outline-secondary">Chiqish</a>  
           {% else %}
             <a href="{% url 'reg' %}" class='btn btn-outline-secondary mr-2'>Registratsiya</a>  

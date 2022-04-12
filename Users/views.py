@@ -13,3 +13,7 @@ def register(request):
     else:  
         form = Userreg()
     return  render(request, 'users/registraion.html',{'form':form, 'title':"Ruyhatga olish"})
+
+
+def profile(request):
+    return render(request, 'users/profile.html')
