@@ -8,8 +8,8 @@ def register(request):
         if form.is_valid():
             form.save() #formadagi malumotlarni bazaga saqlash
             username = form.cleaned_data.get('username')
-            messages.success(request, f'foydalanuvchi {username} ruyhatdan utdi')
-            return redirect('blog-home')
+            messages.success(request, f'foydalanuvchi {username} Ruyhatdan utdingiz kirish uchun login va parol ni kirtiin')
+            return redirect('auth')
     else:  
         form = Userreg()
     return  render(request, 'users/registraion.html',{'form':form, 'title':"Ruyhatga olish"})

@@ -32,8 +32,13 @@
           </ul>
         </div>
         <div class="navbar-nav">
-          <a href="{% url 'reg' %}" class='btn btn-outline-secondary mr-2'>Registratsiya</a>  
-          <a href="{% url 'auth' %}" class="btn btn-outline-secondary">Kirish</a>  
+          {% if user.is_authenticated %}
+            <a href="" class='btn btn-outline-secondary mr-2'>Profil</a>  
+            <a href="{% url 'exit' %}" class="btn btn-outline-secondary">Chiqish</a>  
+          {% else %}
+            <a href="{% url 'reg' %}" class='btn btn-outline-secondary mr-2'>Registratsiya</a>  
+            <a href="{% url 'auth' %}" class="btn btn-outline-secondary">Kirish</a>  
+          {% endif %}
         </div>
       </nav>
 
@@ -62,8 +67,27 @@
                     
                         <img src="https://storage.kun.uz/source/7/Jh3Z3Mi920b3560k3KtcljT-sf3xbtvl.jpg" class='img-thumbnail'>
                         <button class="btn btn-warning">Ko'rish</button>
+                      
                       </div>
+                      <div class="calendar">
+                        <div class="header active">
+                        <a data-action="prev-month" href="javascript:void(0)" title="Previous Month"><i></i></a>
+                        <div class="text" data-render="month-year"><span>April &nbsp; 2022</span></div>
+                        <a data-action="next-month" href="javascript:void(0)" title="Next Month"><i></i></a>
+                        </div>
+                        <div class="months active" data-flow="left">
+                        <div class="month month-a" data-active="true">
+                        <div class="render render-a" data-date="April - 2022" data-month="3"><div class="table"><div class="row head"><div class="cell">Sun</div><div class="cell">Mon</div><div class="cell">Tue</div><div class="cell">Wed</div><div class="cell">Thu</div><div class="cell">Fri</div><div class="cell">Sat</div></div><div class="row"><div class="cell disable">27</div><div class="cell disable">28</div><div class="cell disable">29</div><div class="cell disable">30</div><div class="cell disable">31</div><div class="cell"><span>1</span></div><div class="cell"><span>2</span></div></div><div class="row"><div class="cell"><span>3</span></div><div class="cell"><span>4</span></div><div class="cell"><span>5</span></div><div class="cell"><span>6</span></div><div class="cell"><span>7</span></div><div class="cell"><span>8</span></div><div class="cell"><span>9</span></div></div><div class="row"><div class="cell"><span>10</span></div><div class="cell"><span>11</span></div><div class="cell active"><span>12</span></div><div class="cell"><span>13</span></div><div class="cell"><span>14</span></div><div class="cell"><span>15</span></div><div class="cell"><span>16</span></div></div><div class="row"><div class="cell"><span>17</span></div><div class="cell"><span>18</span></div><div class="cell"><span>19</span></div><div class="cell"><span>20</span></div><div class="cell"><span>21</span></div><div class="cell"><span>22</span></div><div class="cell"><span>23</span></div></div><div class="row"><div class="cell"><span>24</span></div><div class="cell"><span>25</span></div><div class="cell"><span>26</span></div><div class="cell"><span>27</span></div><div class="cell"><span>28</span></div><div class="cell"><span>29</span></div><div class="cell"><span>30</span></div></div></div></div>
+                        </div>
+                        <div class="month month-b" data-active="false">
+                        <div class="render render-b"></div>
+                        </div>
+                        </div>
+                        </div>
                     </div>
+                    
+                  </div>
+                 
 
               </aside>
           </div>
@@ -73,6 +97,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-
+      
 </body>
 </html>

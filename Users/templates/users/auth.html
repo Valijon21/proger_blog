@@ -2,7 +2,8 @@
 {% load crispy_forms_tags %}
     {% block content %}
     <div class="form-section"> 
-        <h2>Saytga kirish</h2>
+        <h2>Kirish</h2>
+        <p>Assalomu alaykum kirish uchun ma'lumotlaringizni kiriting</p>
         <form method="post">
             {% csrf_token %}
             {{ form|crispy}}
