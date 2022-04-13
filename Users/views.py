@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import Userreg
+from django.contrib.auth.decorators import login_required
+
+
 
 def register(request):
     if request.method == "POST":
@@ -14,6 +17,7 @@ def register(request):
         form = Userreg()
     return  render(request, 'users/registraion.html',{'form':form, 'title':"Ruyhatga olish"})
 
-
+# funksiyaga dekorator qushamiz
+@login_required
 def profile(request):
     return render(request, 'users/profile.html')
