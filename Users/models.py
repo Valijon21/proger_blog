@@ -6,4 +6,4 @@ class Profile(models.Model):
     img = models.ImageField(default='default.jpg', upload_to='user_images')
     
     def __str__(self):
-        return f'Foydalanuvchini Profili {self.user.username}'
+        return f'Foydalanuvchini Profili  {self.user.username}'
