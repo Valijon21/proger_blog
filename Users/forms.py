@@ -15,9 +15,13 @@ class UserUpdateForm(forms.ModelForm):
     
     class Meta:
         model = User
-        fields = ['usename', 'email']
+        fields = ['username', 'email']
         
 class ProfileImage(forms.ModelForm):
+    def __init__(self, *args, **kwards):
+        super(ProfileImage, self).__init__(*args, **kwards)
+        self.fields['img'].label='Foydalanuvchi rasmi'
+        
     class Meta:
         model = Profile
         fields = ['img']

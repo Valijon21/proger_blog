@@ -1,5 +1,5 @@
 {% extends 'blog/base.html' %}
-
+{% load crispy_forms_tags %}
     {% block content %}
     <div class="form-section"> 
         <h2>Foydalanuchni Kabineti</h2>
@@ -10,6 +10,14 @@
               <b>Email:</b> {{ user.email }}
             </p>
           </div>
+          <h3 class="mt-4">Foydalanuvchini malumotini uzgartirish</h3>
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ update_user|crispy }}
+            {{ img_profile|crispy }}
+
+            <button type="submit" class='btn btn-outline-warning'>Malumotlarni yangilash</button>
+        </form>
     </div>
     {% endblock %}
 
