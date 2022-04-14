@@ -1,21 +1,6 @@
 from django.shortcuts import render
 from .models import News
 # Create your views here.
-news = [
-    {
-        'title':'Birinchi habar',
-        'text':'Habar bir',
-        'date':'21.07.1993',
-        'avtor':'Vlaijon'
-    },
-    {
-        'title':'ikkinchi habar',
-        'text':'Habar ikki',
-        'date':'21.07.1993',
-        'avtor':''
-    },
-    
-]
 
 def home(request):
     
