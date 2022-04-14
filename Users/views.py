@@ -20,10 +20,21 @@ def register(request):
 # funksiyaga dekorator qushamiz
 @login_required
 def profile(request):
-    img_profile = ProfileImage()
-    update_user = UserUpdateForm()
-    data = {
+     if request.method == "POST":
+        img_profile = ProfileImage(request.POST, request.FILES, instance=request.user.profile)
+        update_user = UserUpdateForm(request.POST, instance=request.user)
+        if update_user.is_valid() and img_profile.is_valid():
+            update_user.save()
+            img_profile.save()
+            messages.success(request, f'Akkaunt malumotlariz yangilandi')
+            
+            return redirect('profile')
+     else:
+        img_profile = ProfileImage(instance=request.user.profile)
+        update_user = UserUpdateForm(instance=request.user)
+        
+     data = {
         'img_profile': img_profile,
         'update_user': update_user
-    }
-    return render(request, 'users/profile.html', data)
+     }
+     return render(request, 'users/profile.html', data)
