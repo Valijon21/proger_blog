@@ -7,18 +7,18 @@
         <h1>{{post.title}}</h1>
         <p>{{post.text}}</p>
         <div class='row'>
-          <div class='col-md-2'>
-            <img src="{{ post.avtor.profile.img.url }}" alt="{{ post.avtor }}" class="user_image">
+          <div>
+            {% if post.auth.profile.img %}
+              <img src="{{ post.auth.profile.img.url }}" alt="{{ post.auth }}" class="user_image">
+             {% else %}
+             <img src="/pictures/default.jpg" alt="{{ post.auth }}" class="user_image"> 
+             {% endif %}
           </div>
-          <div class="col-md-10">
+          <div>
             <span class='text-muted'><b>Sana: </b>{{ post.date|date:"j F Y, H:i:s"}}</span>
-            {% if post.avtor %}
-            <p><b>Mualif: </b> <markdown>{{post.avtor}}</markdown>{{post.date}}</p>
-            {% else %}
-                <p><b>Mualif:</b> <markdown>Admin</markdown></p> 
-            {% endif %}     
-          </div>
-        </div>
+            <p><b>Mualif: </b> <markdown>{{ post.auth }} </markdown>{{post.date}}</p>
+
+          </div>        </div>
     </div>
     {% endfor %}
 {% endblock %}

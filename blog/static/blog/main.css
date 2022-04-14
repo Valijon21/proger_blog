@@ -5,7 +5,15 @@ body {
 .alert-light {
     border-color:#bfbfbf
 }
-.form-section {
+.user_image {
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    margin-right:10px;
+    margin-left: 20px;
+
+}
+.form-section {      
     background: #ffff;
     padding: 20px;
     border: 1px solid silver;
